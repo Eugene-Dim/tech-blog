@@ -1,0 +1,23 @@
+<h2>Your Posts</h2>
+<div class="centerthisbutton">
+  <a href="/dashboard/new" class="btn btn-primary">ADD POST</a>
+</div>
+<section>
+  {{#if posts.length}}
+    {{#each posts as |post|}}
+      <article class="post">
+        <div class="container-fluid dashboard-container">
+          <div class="card-header dashboard-post">
+            <h4 class="card-title post-title"><a class="Link" href="/dashboard/edit/{{post.id}}">{{post.title}}</a></h4>
+          </div>
+          <div class="card-body post-body">
+            <p class="card-body post-content">{{post.content}}</p>
+            <p class="card-text post-author">Posted by <span class="post-username">{{post.user.username}}</span> on {{format_date post.createdAt}}</p>
+          </div>
+        </div>
+      </article>
+    {{/each}}
+  {{else}}
+    <p>You have no posts yet.</p>
+  {{/if}}
+</section>

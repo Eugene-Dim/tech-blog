@@ -1,0 +1,15 @@
+{{#each posts as |post| }}
+<article class="post">
+  <div class="container-fluid">
+    <div class="card-header dashboard-post">
+      <h5 class="card-title post-title"><a class="link" href="/post/{{post.id}}">{{post.title}}</a></h5>
+      <div class="card-body post-body"></div>
+
+      <p class="card-body post-content">{{post.content}}</p>
+      <p class="card-text post-author">Posted by <span class="post-username">{{post.user.username}}</span> on
+        {{format_date post.createdAt}}</p>
+    </div>
+  </div>
+  </div>
+</article>
+{{/each}}
